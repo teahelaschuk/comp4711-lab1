@@ -12,7 +12,6 @@ and open the template in the editor.
     <body>
         <?php
         include('Student.php');
-        echo "Lab 1";
         
         $students = array();
         
@@ -39,6 +38,23 @@ and open the template in the editor.
         $second->add_grade(50);
         $students['a456'] = $second;
         
+        // adding student #3
+        $third = new Student();
+        $third->surname = "Elaschuk";
+        $third->first_name = "Teah";
+        $third->add_email('home', 'teahelaschuk@gmail.com');
+        $third->add_email('work', 'nelaschuk1@bcit.ca');
+        $third->add_grade(70);
+        $third->add_grade(85);
+        $third->add_grade(100);
+        $students['t789'] = $third;
+        
+        // sort students
+        ksort($students);
+        
+        //display
+        echo 'Number of students: ';
+        echo sizeof($students);
         foreach($students as $student)
             echo $student->toString();
         ?>

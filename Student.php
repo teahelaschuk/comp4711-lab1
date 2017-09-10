@@ -7,7 +7,8 @@
  */
 
 /**
- * Student object
+ * COMP4711 Lab 1
+ * Student class
  * @author Teah
  */
 class Student {
@@ -26,6 +27,7 @@ class Student {
         $this->grades[] = $grade;
     }
     
+    // calculates the average grade for a student
     function average() {
         $total = 0;
         foreach($this->grades as $value)
@@ -33,6 +35,7 @@ class Student {
         return $total / count($this->grades);
     }
     
+    // formats and prints the student's information (name, average grade, email(s))
     function toString() {
         $result = $this->first_name . ' ' . $this->surname;
         $result .= ' (' . $this->average() . ")\n";  
